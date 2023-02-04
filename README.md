@@ -1,2 +1,3 @@
+- # tables tested. For now, I'm trying to be less complicated as possible. Would like to add in climate, i could add in a boolean but it would be good if there was a similar way like the datetime import and description but that might be uneeded. 
 # Db-created.
 Console created.
