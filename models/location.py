@@ -7,6 +7,5 @@ class Location:
         self.id = id 
         
         
-        
     def mark_filmed(self):
         self.filmed = True
