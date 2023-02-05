@@ -17,7 +17,6 @@ class TestUser(unittest.TestCase):
         self.name = "Susan"
         self.job = "Tv Producer"
 
-
     def test_user_has_name(self):
         self.assertEqual("Susan", self.name)
 

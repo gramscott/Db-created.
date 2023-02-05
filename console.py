@@ -11,9 +11,9 @@ user2 = User("Greg", "Assistant Director")
 user_repository.save(user1)
 
 
-location1 = Location("Glasgow", "River City", True)
+location1 = Location("Glasgow", "River City", True, False)
 location_repository.save(location1)
-location2 = Location("Edinburgh", "Avengers: Infinity War", False)
+location2 = Location("Edinburgh", "Avengers: Infinity War", False, False)
 location_repository.save(location2)
 
 
