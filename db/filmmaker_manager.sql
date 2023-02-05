@@ -18,8 +18,7 @@ CREATE TABLE locations (
 );
 
 
-
-
-
+INSERT INTO users (name, job) VALUES ('Susan', 'TV Producer') RETURNING *
+INSERT INTO users (name, job) VALUES ('Greg', 'Assistant Director') RETURNING *
 
 

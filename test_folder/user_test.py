@@ -8,7 +8,6 @@ class TestUser(unittest.TestCase):
         self.user1 = User("Susan", "TV Producer", id = None)
         self.user2 = User("Greg", "Assistant Director")
 
-
     def test_user1_has_name(self):
         self.assertEqual("Susan", self.user1.name)
 
