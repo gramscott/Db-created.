@@ -5,7 +5,7 @@ import repositories.user_repository as user_repository
 
 
 def save(user):
-    sql = "INSERT INTO users (name, job) VALUES (%s, %s) RETURNING id"
+    sql = "INSERT INTO users (name, job) VALUES (%s, %s) RETURNING id = %s"
     values = [user.name, user.job]
     results = run_sql(sql, values)
     id = results[0]['id']

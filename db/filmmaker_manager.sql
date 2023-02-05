@@ -1,5 +1,6 @@
-DROP TABLE users;
 DROP TABLE locations;
+DROP TABLE users;
+
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -15,6 +16,8 @@ CREATE TABLE locations (
   good_climate BOOLEAN,
   user_id INT NOT NULL REFERENCES users(id) 
 );
+
+
 
 
 

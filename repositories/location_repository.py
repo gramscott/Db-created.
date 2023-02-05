@@ -5,7 +5,7 @@ import repositories.location_repository as location_repository
 
 
 def save(location):
-    sql = "INSERT INTO location(name, set, filmed, good_climate) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO location(name, set, filmed, good_climate) VALUES (%s, %s, %s, %s) RETURNING id = %s"
     values = [location.name, location.set, location.filmed, location.good_climate]
     results = run_sql(sql, values)
     location.id = results[0]['id']
