@@ -33,6 +33,20 @@ def select(id):
     if result is not None:
         user = User(result['name'], result['job'])
     return user
+
+def delete_all():
+    sql = "DELETE FROM users"
+    run_sql(sql)
         
 
 
+def delete(id):
+    sql = "DELETE FROM users WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+def update(user):
+    sql = "UPDATE users SET(user_id, name, job) = (%s, %s, %s) WHERE id = %s"
+    values = [user.name, user.job, user.id]
+    run_sql(sql, values)
