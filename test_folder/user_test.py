@@ -1,8 +1,5 @@
 import unittest
 from models.user import User 
-from models.location import Location 
-
-
 
 class TestUser(unittest.TestCase):
 

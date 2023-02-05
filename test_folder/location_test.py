@@ -1,18 +1,18 @@
-import unittest
-from models.location import Location 
+# import unittest
+# from models.location import Location 
+# from models.user import User
+# from test_folder.user_test import TestUser
 
 
-class TestLocation(unittest.TestCase):
-    def setUp(self):
-        self.name = "Glasgow"
-        self.set = "River City"
+# class TestLocation(unittest.TestCase):
+#     def setUp(self):
+
+#         self.location1 = Location("Glasgow", "River City", True, False)
+#         self.location2 = Location("Edinburgh", "Avengers: Infinity War", False, False)
+
+#         user1 = User(location1)
+#         user2 = User[location2]
 
 
-    def test_location_has_name(self):
-        self.assertEqual("Glasgow", self.name)
-        
-        
-    def test_location_has_set(self):
-        self.assertEqual("River City", self.set)
 
-    
+
