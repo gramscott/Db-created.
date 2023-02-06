@@ -15,7 +15,7 @@ def users():
 
 # NEW
 # GET '/tasks/new'
-@users_blueprint.route("/users/new", method =['GET'])
+# @users_blueprint.route("/users/new", method =['GET'])
 # CREATE
 # POST '/tasks'
 
