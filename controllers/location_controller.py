@@ -12,7 +12,7 @@ locations_blueprint = Blueprint("locations", __name__)
 
 @locations_blueprint.route("/locations")
 def locations():
-    locations = location_repository.select()
+    locations = location_repository.select_all()
     return render_template("locations/index.html", locations=locations)
 
 @locations_blueprint.route("/locations/<id>")
@@ -21,11 +21,11 @@ def show(id):
     users = location_repository.users(location)
     return render_template("location/show.html", location=location, users=users)
 
-@locations_blueprint("/locations/new", methods=['GET'])
-def new_location():
-    users = user_repository.select_all()
-    locations = location_repository.select_all()
-    return render_template("locations.new.html", users = users, locations = locations)
+# @locations_blueprint("/locations/new", methods=['GET'])
+# def new_location():
+#     users = user_repository.select_all()
+#     locations = location_repository.select_all()
+#     return render_template("locations.new.html", users = users, locations = locations)
 
 @locations_blueprint.route("/locations", methods = ['POST'])
 def create_location():
