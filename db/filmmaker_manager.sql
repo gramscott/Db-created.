@@ -14,7 +14,7 @@ CREATE TABLE locations (
   set VARCHAR(255), 
   filmed BOOLEAN,
   good_climate BOOLEAN,
-  user_id INT NOT NULL REFERENCES users(id) 
+  user_id INT NOT NULL REFERENCES users(id)
 );
 
 

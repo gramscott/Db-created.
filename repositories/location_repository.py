@@ -8,7 +8,7 @@ import repositories.user_repository as user_repository
 
 def save(location):
     sql = "INSERT INTO locations (name, set, filmed, good_climate, user_id) VALUES  (%s, %s, %s, %s, %s) RETURNING *"
-    values = [location.name, location.set, location.filmed, location.good_climate, location.id]
+    values = [location.name, location.set, location.filmed, location.good_climate, location.user.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
