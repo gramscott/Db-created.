@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect
 
 from flask import Blueprint
 
+from models.user import User
+
 import repositories.user_repository as user_repository
 
 
@@ -18,3 +20,4 @@ def show():
     user = user_repository.select_all(id)
     locations = user_repository.locations(user)
     return render_template("users/show.html", users=users, locations = locations)
+
