@@ -53,4 +53,3 @@ def update(location):
     sql = "UPDATE locations SET(name, set, filmed, good_climate, user_id) = (%s,  %s, %s, %s, %s) WHERE id = %s"
     values = [location.name, location.set, location.filmed, location.good_climate, location.id]
     run_sql(sql, values)
-

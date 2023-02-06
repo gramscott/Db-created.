@@ -1,16 +1,39 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
 
-<form action="/locations/{{location.id}}" methods="post"></form>
-<div>
-    <label for="good_climate">Good Climate?</label>
-    <input type="checkbox" id="good_climate" name="good_climate">
+<form action="/locations/{{location.id}}" methods="post">
+    
+    <div>
+    <label for="filmed"> Filmed here?</label>
 </div>
-
+<select id="location" name="filmed">
 <option value="true"
-{%s if location.good_climate == True %} selected="selected" {% endif %}>
-It was gorgeous!
+{% if location.filmed == True %} selected="selected" {% endif %}>
+Aye!
 </option>
 
-<option value="false"></option> -->
+<option value="false"
+    {% if location.filmed == False %} selected="selected" {% endif %}>
+Naw!
+</option>
+</select>
+
+
+<div>
+    <label for="good_climate">Good Climate?</label>
+</div>
+<select id="location" name="good_climate">
+    <option value="true"
+    {% if location.good_climate == True %} selected="selected" {% endif %}>
+    It was bonnie!
+    </option>
+
+    <option value="false"
+    {% if location.good_climate == False %} selected="selected" {% endif %}>
+    Bring yer brolly!
+    </option>
+</select>
+<button type="submit">Enter</button>
+</form>
+{% endblock %}

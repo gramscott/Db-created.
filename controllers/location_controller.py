@@ -18,14 +18,14 @@ def locations():
 @locations_blueprint.route("/locations/<id>", methods=['GET'])
 def show(id):
     location = location_repository.select(id)
-    users = location_repository.users(location)
-    return render_template("location/show.html", location=location, users=users)
+    # user = user_repository.select(location.user_id)
+    return render_template("locations/show.html", location=location)
 
-# @locations_blueprint("/locations/new", methods=['GET'])
-# def new_location():
-#     users = user_repository.select_all()
-#     locations = location_repository.select_all()
-#     return render_template("locations.new.html", users = users, locations = locations)
+@locations_blueprint.route("/locations/new", methods=['GET'])
+def new_location():
+    users = user_repository.select_all()
+    locations = location_repository.select_all()
+    return render_template("locations/new.html", users = users, locations = locations)
 
 @locations_blueprint.route("/locations", methods = ['POST'])
 def create_location():
@@ -42,3 +42,10 @@ def create_location():
 def delete_location(id):
     location_repository.delete(id)
     return redirect('/locations')
+
+
+@locations_blueprint.route("/locations/<id>/edit", methods = ['GET'])
+def edit_location(id):
+    location = location_repository.select(id)
+    users = user_repository.select_all()
+    return render_template('locations/edit.html', location=location, users = users)

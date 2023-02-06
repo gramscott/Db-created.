@@ -1,21 +1,20 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block content % }
+{% block content %}
 
-<body>
-    <div>
-        <h1> {location.name}} </h1>
+
+<div>
+        <h1> {{location.name}} </h1>
         <hr>
         <p> {{location.set}} </p>
         <p> Good Climate? {{ location.good_climate }}</p>
         <p>Filmed there? {{ location.filmed }}</p>
         <p> <a href="/locations/{{location.id}}/edit">Edit</a></p>
-    </body>
     
     <h3>Visited by: </h3>
-    <h3> {{ location.user.id }}  </h3>
+    <h3> {{ location.user.name }}  </h3>
 </div>
 
-{% endblock%}
+{% endblock %}
 
 
