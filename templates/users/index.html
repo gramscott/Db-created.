@@ -1,6 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
 {% block content %}
-This is the users index
+<h1>Profiles</h1>
 
-
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Job</th>
+  </tr>
+  {% for user in users %}
+  <tr>
+    <td><a href="/users/{{ user.id }}"> {{user.name}} </a></td>
+  <td>|</td>
+    <td> {{ users. job }}</td>
+    <td>|</td>
+  {% endfor %}
+</table>
 {% endblock %}
+
