@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<form action="/locations/{{ location.id }}" methods="post">
+<form action="/user/{{ user.id }}" methods="post">
     
     <div>
     <label for="filmed"> Filmed here?</label>
@@ -35,32 +35,6 @@
     </option>
 </select>
 
-
-<div>
-    <label for="user">User:</label>
-    <select id="user" name="user_id">
-      {% for user in all_users %}
-        <option value="{{ user.id }}"
-          {% if task.user.id== user.id %} selected="selected"{% endif %}>
-          {{ user.name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-
-  <div>
-    <label for="user">User:</label>
-    <select id="user" name="user_id">
-      {% for user in all_users %}
-        <option value="{{ user.id }}"
-          {% if task.user.id== user.id %} selected="selected"{% endif %}>
-          {{ user.first_name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-
-  <button type="submit">Update Task</button>
 
 <button type="submit">Enter</button>
 </form>

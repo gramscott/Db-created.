@@ -3,6 +3,7 @@
 {% block content %}
 <!-- {{ users }} -->
 <header>
+    <hr>
     New Location
 </header>
 <form action="/locations" method="post">
@@ -18,7 +19,6 @@
 
 <div>
     <label id="filmed" for="filmed">Filmed?</label>
-</div>
     <select name="filmed" id="filmed">
         <option value="true">
             Aye!
@@ -27,12 +27,12 @@
             Not yet!
         </option>
     </select>
+</div>
 
    
 
 <div>
     <label for="good_climate">Good Climate?</label>
-</div>
     <select name="good_climate" id="good_climate">
         <option value="true">
             It was bonnie!
@@ -41,6 +41,7 @@
             Bring yer brolly!
         </option>
     </select>
+</div>
 
 
 <div>

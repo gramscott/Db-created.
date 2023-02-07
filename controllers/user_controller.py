@@ -6,6 +6,8 @@ from models.user import User
 
 import repositories.user_repository as user_repository
 
+import repositories.location_repository as location_repository
+
 
 users_blueprint = Blueprint("users", __name__)
 
@@ -15,9 +17,14 @@ def users():
     users = user_repository.select_all()
     return render_template ("users/index.html", users = users)
 
-# @users_blueprint.route("/users/<id>")
-# def show():
-#     user = user_repository.select_all(id)
-#     locations = user_repository.locations(user)
-#     return render_template("users/show.html", users=users, locations = locations)
+@users_blueprint.route("/users", methods=['GET'])
+def show(id):
+    user = user_repository.select(id)
+    return render_template("users/show.html", user=user)
+
+@users_blueprint.route("/users/<id>/edit", methods = ['GET'])
+def edit_user(id):
+    location = user_repository.select(id)
+    users = location_repository.select_all()
+    return render_template('users/edit.html', location=location, users = users)
 
