@@ -14,6 +14,3 @@ class Location:
     
     def mark_good_climate(self):
         self.good_climate = True
-
-
-

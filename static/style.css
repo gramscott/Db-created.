@@ -1,6 +1,10 @@
 
 body {                                      
     font-family:fantasy; 
-    background-color: dodgerblue;
-}  
-
+    width:100vw;
+    height:100vh;
+    border: 2px solid;
+    background-image: url('images/homepage_pic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+};
