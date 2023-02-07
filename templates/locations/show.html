@@ -2,18 +2,14 @@
 
 {% block content %}
 
-
 <div>
-        <h1> {{location.name}} </h1>
-        <hr>
-        <p> {{location.set}} </p>
-        <p> Good Climate? {{ location.good_climate }}</p>
-        <p>Filmed there? {{ location.filmed }}</p>
-        <p> <a href="/locations/{{location.id}}/edit">Edit</a></p>
+    <h1> {{ location.name }} </h1>
+    <p> {{location.set}} </p>
+    <p>Good Climate? {{ location.good_climate }}</p>
+    <p> Filmed here? {{ location.filmed }}</p>
+    <p> <a href="/locations/{{location.id}}/edit">Edit</a></p>
     <h3>Visited by: </h3>
     <h3> {{ location.user.name }}  </h3>
 </div>
 
-{% endblock %}
-
-
+{% endblock %} -->

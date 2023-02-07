@@ -17,16 +17,17 @@ def locations():
     return render_template("locations/index.html", locations=locations)
 
 
-@locations_blueprint.route("/location/<id>", methods=['POST'])
+@locations_blueprint.route("/locations/<id>", methods=['POST'])
 def update(id):
     user_id = request.form['user_id']
     name = request.form['name']
     set = request.form['set']
     filmed = request.form['filmed']
     good_climate = request.form['good_climate']
-    location = Location(user_id, name, set, filmed, good_climate)
+    user = user_repository.select(request.form["user_id"])
+    location = Location(user_id, name, set, filmed, good_climate, user)
     location_repository.update(location)
-    return redirect('/location')
+    return redirect('/locations')
 
 
 @locations_blueprint.route("/locations/<id>", methods=['GET'])
