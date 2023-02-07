@@ -8,15 +8,12 @@
     <tr>
         <th>Name:</th>
         <th>Set:</th>
-        <th>Good Climate:</th>
     </tr>
     {% for location in locations %}
     <tr>
         <td> <a href="/locations/{{ location.id }}"> {{location.name}}</a></td>
         <td>|</td>
         <td> {{ location.set }} </td>
-        <td>|</td>
-        <td> {{ location.good_climate }}</td>
     </tr>
     {% endfor %}
 </table>

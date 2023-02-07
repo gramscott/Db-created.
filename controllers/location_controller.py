@@ -31,9 +31,10 @@ def new_location():
 def create_location():
     user_id = request.form['user_id']
     name = request.form['name']
-    set = request.form['filmed']
+    set = request.form['set']
+    filmed = request.form['filmed']
     good_climate = request.form['good_climate']
-    location = Location(user_id, name, set, good_climate)
+    location = Location(user_id, name, set, filmed, good_climate)
     location_repository.save(location)
     return redirect('/locations')
 

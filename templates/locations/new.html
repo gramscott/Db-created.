@@ -1,0 +1,43 @@
+{% block content %}
+{{ users }}
+<form action="/locations" method="post">
+    <div>
+        <label for="user_id">{{ location.user_id }}</label>
+            <button type="text">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+
+<div>
+    <label for="set">Set:</label>
+    <input type="text" id="set" name="name">
+</div>
+
+<div>
+    <label for="filmed">Filmed?</label>
+    <select name="filmed" id="filmed">
+        <option value="true">True</option>
+        <option value="false">False</option>
+</div>
+
+<div>
+    <label for="good_climate">Good Climate?</label>
+    <select id="good_climate" name = "good_climate">
+        <option value="true">True</option>
+        <option value="false">False</option>
+</div>
+
+<div>
+    <label for="user">User:</label>
+    <select name="user_id" id="user"></select>
+    {% for user in users %}
+    <option value="{{user.id}}">{{user.name}} {{user.job}}</option>
+    {% endfor %}
+    </select>
+</div>
+<button type="submit">Add location</button>
+</div>
+</form>
+
+
+{% endblock %}
