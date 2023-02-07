@@ -23,3 +23,4 @@ INSERT INTO users (name, job) VALUES ('Greg', 'Assistant Director') RETURNING *;
 
 INSERT INTO locations (name, set, filmed, good_climate, user_id) VALUES ('Glasgow', 'River City', 'True', 'False', 1) RETURNING *;
 INSERT INTO locations (name, set, filmed, good_climate, user_id) VALUES('Edinburgh', 'Avengers: Infinity War', 'False', 'False', 2) RETURNING *;
+

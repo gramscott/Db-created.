@@ -19,6 +19,8 @@ location1 = Location("Glasgow", user1, "River City", True, False)
 location_repository.save(location1)
 location2 = Location("Edinburgh", user2, "Avengers: Infinity War", False, False)
 location_repository.save(location2)
+# location3 = Location("Highlands", "Outlander")
+# location_repository(location3)
 
 
 location_repository.select_all()

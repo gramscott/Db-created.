@@ -19,7 +19,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        user = User(row['name'], row['job'])
+        user = User(row['name'], row['job'], row['id'])
         users.append(user)
 
     return users
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        user = User(result['name'], result['job'])
+        user = User(result['name'], result['job'], result['id'])
     return user
 
 def delete_all():

@@ -2,27 +2,27 @@
 {% block content %}
 
 
-<form action="/locations/{{location.id}}" methods="post">
+<form action="/locations/{{ location.id }}" methods="post">
     
     <div>
     <label for="filmed"> Filmed here?</label>
-</div>
-<select id="location" name="filmed">
-<option value="true"
-{% if location.filmed == True %} selected="selected" {% endif %}>
-Aye!
-</option>
-
-<option value="false"
+    </div>
+    <select id="location" name="filmed">
+        <option value="true"
+        {% if location.filmed == True %} selected="selected" {% endif %}>
+        Aye!
+    </option>
+    
+    <option value="false"
     {% if location.filmed == False %} selected="selected" {% endif %}>
-Naw!
-</option>
+    No yet!
+    </option>
 </select>
 
-
 <div>
-    <label for="good_climate">Good Climate?</label>
+    <label for="good_climate"></label>Good Climate?</label>
 </div>
+
 <select id="location" name="good_climate">
     <option value="true"
     {% if location.good_climate == True %} selected="selected" {% endif %}>
@@ -34,6 +34,8 @@ Naw!
     Bring yer brolly!
     </option>
 </select>
+
+
 <button type="submit">Enter</button>
 </form>
 {% endblock %}
