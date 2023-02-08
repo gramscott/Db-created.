@@ -2,8 +2,15 @@
 {% block content %}
 
 
-<form action="/locations/{{ location.id }}" methods="get">
-    <br>
+<form action="/locations/{{ location.id }}" method="POST">
+        </div>
+    <label for="location">Name:</label>
+    <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="set">Set:</label>
+        <input type="text" id="set" name="set">
+    </div>
     <div>
     <label for="filmed"> Filmed here?</label>
     <select id="location" name="filmed">
@@ -34,25 +41,25 @@
     </option>
 </select>
 </div>
+<div>
+    <label for="user_id"></label> What's your name? </label>
+    
+        <select name="user_id" id="user">
+        {% for user in users %}
+       <option value={{user.id}}
+           {% if location.user.id == user.id %}
+           
+           selected="selected" {% endif %}>
+           {{ user.name }}
+       </option>
+       {% endfor %}
+          
+       </select>
+   </div>
+<br>
+<div>
+<button type="submit">Enter</button>
+</div>
 </form>
 
-<form action="/locations/{{ location.id }}" methods="post">
-    <br>
-    <div>
-     <label for="user_id"></label> What's your name? </label>
-     <select name="name" id="user">
-        <option value="user_id"
-            {% if location.user_id == True %}
-            selected="selected" {% endif %}>
-            Susan
-        </option>
-           <option value="user_id"
-               {% if location.user_id == False %}
-               selected="selected" {% endif %}>
-               Greg
-        </select>
-    </div>
-<br>
-<button type="submit">Enter</button>
-</form>
 {% endblock %}

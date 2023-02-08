@@ -1,5 +1,6 @@
 from models.user import User
-from models.location import Location 
+from models.location import Location
+import pdb 
 
 import repositories.location_repository as location_repository
 import repositories.user_repository as user_repository 
@@ -22,5 +23,7 @@ location_repository.save(location2)
 
 
 
-location_repository.select_all()
+results = location_repository.select_all()
+
+pdb.set_trace()
 

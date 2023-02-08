@@ -5,6 +5,7 @@ from models.location import Location
 from models.user import User
 
 import repositories.user_repository as user_repository 
+import pdb
 
 def save(location):
     sql = "INSERT INTO locations (name, set, filmed, good_climate, user_id) VALUES  (%s, %s, %s, %s, %s) RETURNING *"
@@ -51,5 +52,6 @@ def delete(id):
 
 def update(location):
     sql = "UPDATE locations SET(name, set, filmed, good_climate, user_id) = (%s,  %s, %s, %s, %s) WHERE id = %s"
-    values = [location.name, location.set, location.filmed, location.good_climate, location.id]
+    values = [location.name, location.set, location.filmed, location.good_climate, location.user.id, location.id]
+    # pdb.set_trace()
     run_sql(sql, values)

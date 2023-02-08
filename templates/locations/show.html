@@ -3,13 +3,16 @@
 {% block content %}
 
 <div>
-    <h1> {{ location.name }} </h1>```
+    <h1> {{ location.name }} </h1>
     <p> {{location.set}} </p>
     <p>Good Climate? {{ location.good_climate }}</p>
     <p> Filmed here? {{ location.filmed }}</p>
     <p> <a href="/locations/{{location.id}}/edit">Edit</a></p>
+    <form class="delete-form" action="/locations/{{location.id}}/delete" method="POST"> 
+        <button class="trash-button" type="submit">Delete</button>
+    </form>
     <h3>Visited by: </h3>
     <h3> {{ location.user.name }}  </h3>
 </div>
 
-{% endblock %} -->
+{% endblock %}

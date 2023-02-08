@@ -19,13 +19,17 @@ def locations():
 
 @locations_blueprint.route("/locations/<id>", methods=['POST'])
 def update(id):
+    # pdb.set_trace()
     user_id = request.form['user_id']
-    name = request.form['name']
+    # need location name
+    name = request.form['name'] 
+    # set name needed
     set = request.form['set']
     filmed = request.form['filmed']
     good_climate = request.form['good_climate']
     user = user_repository.select(request.form["user_id"])
-    location = Location(user_id, name, set, filmed, good_climate, user)
+    location = Location(name, user, set, filmed, good_climate, id)
+    # pdb.set_trace()
     location_repository.update(location)
     return redirect('/locations')
 
