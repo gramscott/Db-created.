@@ -22,9 +22,9 @@ def show(id):
     user = user_repository.select(id)
     return render_template("users/show.html", user=user)
 
-@users_blueprint.route("/users/<id>/edit", methods = ['GET'])
+@users_blueprint.route("/users/<id>/edit", methods = ['POST'])
 def edit_user(id):
-    location = user_repository.select(id)
-    users = location_repository.select_all()
-    return render_template('users/edit.html', location=location, users = users)
+    user = user_repository.select(id)
+    location = location_repository.select_all()
+    return render_template('users/edit.html', location=location, user = user)
 

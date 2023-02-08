@@ -2,26 +2,25 @@
 {% block content %}
 
 
-<form action="/locations/{{ location.id }}" methods="post">
-    
+<form action="/locations/{{ location.id }}" methods="get">
+    <br>
     <div>
     <label for="filmed"> Filmed here?</label>
-    </div>
     <select id="location" name="filmed">
         <option value="true"
         {% if location.filmed == True %} selected="selected" {% endif %}>
         Aye!
-    </option>
-    
+    </option> 
     <option value="false"
     {% if location.filmed == False %} selected="selected" {% endif %}>
-    No yet!
+    Not yet!
     </option>
 </select>
+</div>
+<br>
 
 <div>
     <label for="good_climate"></label>Good Climate?</label>
-</div>
 
 <select id="location" name="good_climate">
     <option value="true"
@@ -34,6 +33,25 @@
     Bring yer brolly!
     </option>
 </select>
+</div>
+</form>
+
+<form action="/locations/{{ location.id }}" methods="post">
+    <br>
+    <div>
+     <label for="user_id"></label> What's your name? </label>
+     <select name="name" id="user">
+        <option value="user_id"
+            {% if location.user_id == True %}
+            selected="selected" {% endif %}>
+            Susan
+        </option>
+           <option value="user_id"
+               {% if location.user_id == False %}
+               selected="selected" {% endif %}>
+               Greg
+        </select>
+    </div>
 <br>
 <button type="submit">Enter</button>
 </form>
